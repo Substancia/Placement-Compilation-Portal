@@ -1,26 +1,25 @@
-<div [ngClass]="{companyClass: true}" class="row">
-
-    <div [ngClass]="{indexClass: true}" class="col-sm-1">
-        {{n}}
+<div class="panel panel-default">
+    <div class="well well-sm row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 form-group">
+            <h3><b>({{n+1}})</b> {{company.Col0.Name}}</h3>
+            <input type="text" value="{{company.Col0.Tags}}" class="form-control">
+        </div>
+        <div class="col-sm-1"></div>
     </div>
-    <div [ngClass]="{infoClass: true}" class="col-sm-2">
-        <h4>{{company.Col0.Name}}</h4>
-        <input type="text" value="{{company.Col0.Tags}}">
-    </div>
-    <div class="col-sm-9" [ngClass]="{companyClass: true}">
-        <div *ngFor="let col of company.Cols, let i = index" [ngClass]="{dataClass: true}" class="col-sm-3" id="datacol{{i}}">
-            {{col.ColHeader}}
-            <ul>
-                <li *ngFor="let item of col.Items, let k = index">
-                    <b>({{k+1}}){{item.Header}}</b>
-                    <ul>
-                        <li *ngFor="let point of item.List">{{point}}</li>
-                        <li><input type="text" #newPointH><button (click)="newPoint(i, k, newPointH.value)">+</button></li>
+    <div class="row panel-body">
+        <div *ngFor="let col of company.Cols, let i = index" class="col-sm-3" id="datacol{{i}}">
+            <h4>{{col.ColHeader}}</h4>
+            <ul class="list-group">
+                <li *ngFor="let item of col.Items, let k = index" class="list-group-item">
+                    <b>({{k+1}}){{item.Header}}<a href="#" class="close" aria-label="close" (click)="delItem(i, k)">&times;</a></b>
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let point of item.List, let p = index">{{point}}<a href="#" class="close" aria-label="close" (click)="delPoint(i, k, p)">&times;</a></li>
+                        <li class="list-group-item"><input type="text" class="form-control" #newPointH><button (click)="newPoint(i, k, newPointH.value)">+</button></li>
                     </ul>
                 </li>
-                <li><input type="text" #newItemH><button (click)="newItem(i, newItemH.value)">+</button></li>
+                <li class="list-group-item"><input type="text" class="form-control" #newItemH><button (click)="newItem(i, newItemH.value)">+</button></li>
             </ul>
         </div>
     </div>
-
 </div>

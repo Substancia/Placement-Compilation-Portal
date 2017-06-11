@@ -8,8 +8,8 @@ import { DataService } from '../../services/data.service';
   selector: 'index',
   // directives: [DataComponent],
   template: `<h2>Hello {{name}}</h2>
-  <div [ngClass]="{table_main: true}">
-    <data *ngFor = "let company of data, let n = index" [company]="company" [n]="n"></data>
+  <div [ngClass]="{table_main: false}" class="table-bordered">
+    <data *ngFor = "let company of data, let n = index" [company]="company" [n]="n" class="panel-group"></data>
   </div>
   
   `,

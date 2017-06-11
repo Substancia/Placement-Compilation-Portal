@@ -4,9 +4,7 @@ import { IndexComponent } from './components/index/index.component';
 @Component({
   selector: 'my-app',
   template: `<header></header>
-  <div>
-  <index></index>
-  </div>
+    <index></index>
   `,
 })
 export class AppComponent  { 
