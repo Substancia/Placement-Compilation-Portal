@@ -19,29 +19,31 @@ export class DataComponent {
   }
 
   newItem(col_i: number, newItemH: string) {
-    var item: Item = 
-    {
-      Header: newItemH,
-      List: []
-    }
+    var item: Item =
+      {
+        Header: newItemH,
+        List: []
+      }
     console.log("col_i:" + col_i);
-    this.company.Cols[col_i].Items.push(item);
+    if (/\S/.test(newItemH))
+      this.company.Cols[col_i].Items.push(item);
   }
 
   delItem(col_i: number, list_k: number) {
-    if(confirm("Are you sure you want to delete the List: "+ this.company.Cols[col_i].Items[list_k].Header))
-    this.company.Cols[col_i].Items.splice(list_k,1);
+    if (confirm("Are you sure you want to delete the List: " + this.company.Cols[col_i].Items[list_k].Header))
+      this.company.Cols[col_i].Items.splice(list_k, 1);
   }
 
   newPoint(col_i: number, list_k: number, newPointH: string) {
     console.log("col_i:" + col_i);
     console.log("list_k:" + list_k);
-    this.company.Cols[col_i].Items[list_k].List.push(newPointH);
+    if (/\S/.test(newPointH))
+      this.company.Cols[col_i].Items[list_k].List.push(newPointH);
   }
 
   delPoint(col_i: number, list_k: number, point_p: number) {
-    if(confirm("Are you sure you want to delete the point: "+ this.company.Cols[col_i].Items[list_k].List[point_p]))
-    this.company.Cols[col_i].Items[list_k].List.splice(point_p,1);
+    if (confirm("Are you sure you want to delete the point: " + this.company.Cols[col_i].Items[list_k].List[point_p]))
+      this.company.Cols[col_i].Items[list_k].List.splice(point_p, 1);
   }
 }
 
