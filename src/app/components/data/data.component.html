@@ -1,0 +1,11 @@
+<div [ngClass]="{companyClass: true}" class="row">
+    <span [ngClass]="{indexClass: true}" class="col-sm-1">{{n}}</span>
+    <span [ngClass]="{infoClass: true}" class="col-sm-2">
+        <h4>{{company.Col0.Name}}</h4>
+        <p>{{company.Col0.Tags}}</p>
+    </span>
+    <span class="col-sm-9" [ngClass]="{companyClass: true}">
+        <span *ngFor="let col of company.Cols, let i = index" [ngClass]="{dataClass: true}" class="col-sm-3"> {{i}}: {{col.ColHeader}}
+        </span>
+    </span>
+</div>
