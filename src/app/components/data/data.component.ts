@@ -45,6 +45,12 @@ export class DataComponent {
     if (confirm("Are you sure you want to delete the point: " + this.company.Cols[col_i].Items[list_k].List[point_p]))
       this.company.Cols[col_i].Items[list_k].List.splice(point_p, 1);
   }
+
+  editName() {
+    var newName: string = prompt("Change name from " + this.company.Col0.Name + " to:", this.company.Col0.Name);
+    if (/\S/.test(newName))
+      this.company.Col0.Name = (newName?newName:this.company.Col0.Name);
+  }
 }
 
 interface Data {
