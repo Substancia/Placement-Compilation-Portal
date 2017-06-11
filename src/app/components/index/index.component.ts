@@ -9,7 +9,7 @@ import { DataService } from '../../services/data.service';
   // directives: [DataComponent],
   template: `<h2>Hello {{name}}</h2>
   <div [ngClass]="{table_main: true}">
-    <data *ngFor = "let company of data, let n = index" [parentData]="company" [parentData2]="n"></data>
+    <data *ngFor = "let company of data, let n = index" [company]="company" [n]="n"></data>
   </div>
   
   `,

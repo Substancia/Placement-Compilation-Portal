@@ -1,18 +1,35 @@
 import { Component, Input } from '@angular/core';
+import { IndexComponent } from '../index/index.component'
 
 @Component({
   moduleId: module.id,
   selector: 'data',
   templateUrl: 'data.component.html',
 })
-export class DataComponent  { 
+export class DataComponent {
+  @Input()
+  company: Data;
+  @Input()
+  n: number;
+
   name = 'Angular'
-@Input('parentData') company: Data;
-@Input('parentData2') n: number;
-    // data: Data = company;
-    constructor(){
-    // this.data = DataComponent.company;
+
+  constructor() {
+    console.log(this.company);
+  }
+
+  newItem(col_i: number, newData: string) {
+    var item: Item = 
+    {
+      Header: newData,
+      List: ["1"]
     }
+    console.log("col_i:" + col_i);
+    // console.log("list_k:" + list_k);
+    (this.company.Cols[col_i].Items.push(item));
+    // this.company.Cols[col_i].Items.push();
+  }
+
 }
 
 interface Data {
@@ -24,8 +41,8 @@ interface Col0 {
   Tags: string
 }
 interface Col {
-ColHeader: string,
-Items: Item[],
+  ColHeader: string,
+  Items: Item[],
 }
 interface Item {
   Header: string,

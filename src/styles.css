@@ -22,13 +22,13 @@ h1 {
 }
 
 .indexClass {
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
     vertical-align: middle;
 }
 
 .infoClass {
     vertical-align: middle;
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
 }
 
 .dataClass {
