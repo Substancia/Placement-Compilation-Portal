@@ -30,6 +30,13 @@ export class DataComponent {
     // this.company.Cols[col_i].Items.push();
   }
 
+
+  newPoint(col_i: number, list_k: number, newPointH: string) {
+    console.log("col_i:" + col_i);
+    console.log("list_k:" + list_k);
+    (this.company.Cols[col_i].Items[list_k].List.push(newPointH));
+    // this.company.Cols[col_i].Items.push();
+  }
 }
 
 interface Data {

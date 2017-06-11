@@ -15,6 +15,7 @@
                     <b>({{k+1}}){{item.Header}}</b>
                     <ul>
                         <li *ngFor="let point of item.List">{{point}}</li>
+                        <li><input type="text" #newPointH><button (click)="newPoint(i, k, newPointH.value)">+</button></li>
                     </ul>
                 </li>
                 <li><input type="text" #newItemH><button (click)="newItem(i, newItemH.value)">+</button></li>
