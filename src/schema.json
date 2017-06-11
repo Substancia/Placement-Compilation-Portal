@@ -7,15 +7,15 @@
                 "ColHeader": "Information",
                 "Items": [{
                         "Header": "About",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "Contact",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "Locations",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     }
                 ]
             },
@@ -23,11 +23,11 @@
                 "ColHeader": "Market Analysis",
                 "Items": [{
                         "Header": "Openings",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "% Change",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     }
                 ]
             },
@@ -35,22 +35,22 @@
                 "ColHeader": "Alumni Presence",
                 "Items": [{
                     "Header": "Latest",
-                    "List": "List: string[]"
+                    "List": ["L1", "L2", "L3"]
                 }]
             },
             {
                 "ColHeader": "Notes",
                 "Items": [{
                         "Header": "2017",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "2016",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "2015",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     }
                 ]
             }
@@ -65,15 +65,15 @@
                 "ColHeader": "Information",
                 "Items": [{
                         "Header": "About",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "Contact",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "Locations",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     }
                 ]
             },
@@ -81,11 +81,11 @@
                 "ColHeader": "Market Analysis",
                 "Items": [{
                         "Header": "Openings",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "% Change",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     }
                 ]
             },
@@ -93,22 +93,22 @@
                 "ColHeader": "Alumni Presence",
                 "Items": [{
                     "Header": "Latest",
-                    "List": "List: string[]"
+                    "List": ["L1", "L2", "L3"]
                 }]
             },
             {
                 "ColHeader": "Notes",
                 "Items": [{
                         "Header": "2017",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "2016",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     },
                     {
                         "Header": "2015",
-                        "List": "List: string[]"
+                        "List": ["L1", "L2", "L3"]
                     }
                 ]
             }

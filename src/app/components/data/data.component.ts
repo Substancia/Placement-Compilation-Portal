@@ -18,11 +18,11 @@ export class DataComponent {
     console.log(this.company);
   }
 
-  newItem(col_i: number, newData: string) {
+  newItem(col_i: number, newItemH: string) {
     var item: Item = 
     {
-      Header: newData,
-      List: ["1"]
+      Header: newItemH,
+      List: [""]
     }
     console.log("col_i:" + col_i);
     // console.log("list_k:" + list_k);

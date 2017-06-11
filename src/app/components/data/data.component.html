@@ -1,16 +1,25 @@
 <div [ngClass]="{companyClass: true}" class="row">
-    <span [ngClass]="{indexClass: true}" class="col-sm-1">{{n}}</span>
-    <span [ngClass]="{infoClass: true}" class="col-sm-2">
+
+    <div [ngClass]="{indexClass: true}" class="col-sm-1">
+        {{n}}
+    </div>
+    <div [ngClass]="{infoClass: true}" class="col-sm-2">
         <h4>{{company.Col0.Name}}</h4>
-        <p>{{company.Col0.Tags}}</p>
-    </span>
-    <span class="col-sm-9" [ngClass]="{companyClass: true}">
-        <span *ngFor="let col of company.Cols, let i = index" [ngClass]="{dataClass: true}" class="col-sm-3" id="datacol{{i}}"> 
+        <input type="text" value="{{company.Col0.Tags}}">
+    </div>
+    <div class="col-sm-9" [ngClass]="{companyClass: true}">
+        <div *ngFor="let col of company.Cols, let i = index" [ngClass]="{dataClass: true}" class="col-sm-3" id="datacol{{i}}">
             {{col.ColHeader}}
             <ul>
-                <li *ngFor="let item of col.Items, let k = index"><b>{{k+1}}</b>: {{item.Header}}</li>
-                <li><input type="text" #newData><button (click)="newItem(i, newData.value)" [ngStyle]="{width: '20%'}">+</button></li>
+                <li *ngFor="let item of col.Items, let k = index">
+                    <b>({{k+1}}){{item.Header}}</b>
+                    <ul>
+                        <li *ngFor="let point of item.List">{{point}}</li>
+                    </ul>
+                </li>
+                <li><input type="text" #newItemH><button (click)="newItem(i, newItemH.value)">+</button></li>
             </ul>
-        </span>
-    </span>
+        </div>
+    </div>
+
 </div>
