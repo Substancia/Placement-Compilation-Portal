@@ -1,6 +1,15 @@
 body {
     margin: 0;
-    padding: 0 5%;
+    padding: 5%;
+}
+
+a,
+span.glyphicon-pencil {
+    cursor: pointer;
+}
+
+.navbar {
+    opacity: 0.95;
 }
 
 .collapser:after {

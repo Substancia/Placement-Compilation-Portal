@@ -7,29 +7,15 @@ import { DataService } from '../../services/data.service';
   moduleId: module.id,
   selector: 'index',
   // directives: [DataComponent],
-  template: `<h2>Hello {{name}}</h2>
-  <div class="container alert alert-info alert-dismissable fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <kbd *ngFor="let tip of tips; let i = index">
-    <b>{{i+1}})</b> {{tip}}<br>
-  </kbd>
-  </div>
-  <br>
-  <div [ngClass]="{table_main: false}" class="table-bordered">
-    <data *ngFor = "let company of data, let n = index" [company]="company" [n]="n" class="panel-group"></data>
-  </div>
-  
-  `,
+  templateUrl: 'index.component.html',
   providers: [DataService]
 })
 export class IndexComponent {
 
-  name: string;
   data: Data[];
   tips: string[];
 
   constructor(private dataService: DataService) {
-    this.name = 'Aakarsh',
       this.tips = [
         "Double Click on a company name to edit.",
         "Click x to delete any item.",

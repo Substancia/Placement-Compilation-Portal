@@ -12,10 +12,15 @@ export class DataComponent {
   @Input()
   n: number;
 
+  modalv: modalv;
   name = 'Angular'
 
   constructor() {
     console.log(this.company);
+    this.modalv = {
+      header: "",
+      list: []
+    }
   }
 
   newItem(col_i: number, newItemH: string) {
@@ -49,10 +54,27 @@ export class DataComponent {
   editName() {
     var newName: string = prompt("Change name from " + this.company.Col0.Name + " to:", this.company.Col0.Name);
     if (/\S/.test(newName))
-      this.company.Col0.Name = (newName?newName:this.company.Col0.Name);
+      this.company.Col0.Name = (newName ? newName : this.company.Col0.Name);
+  }
+
+  editHeader(i: number) {
+    console.log(i);
+    var newHeader: string = prompt("Change heading from " + this.company.Cols[i].ColHeader + " to:", this.company.Cols[i].ColHeader);
+    if (/\S/.test(newHeader))
+      this.company.Cols[i].ColHeader = (newHeader ? newHeader : this.company.Cols[i].ColHeader);
+  }
+
+  editBox(col_i: number, item_k: number) {
+        this.modalv.header = this.company.Cols[col_i].Items[item_k].Header; 
+        this.modalv.list = this.company.Cols[col_i].Items[item_k].List;
   }
 }
 
+interface modalv 
+{
+  header: string;
+  list: string[];
+}
 interface Data {
   Col0: Col0,
   Cols: Col[]
