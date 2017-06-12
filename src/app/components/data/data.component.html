@@ -14,7 +14,7 @@
         <div class="col-sm-1"></div>
     </div>
 
-    <div class="row panel-body" id="content{{n}}">
+    <div class="row panel-body dynheight" id="content{{n}}">
         <div *ngFor="let col of company.Cols, let i = index" class="col-sm-3" id="datacol{{i}}">
             <ul class="list-group">
                 <li class="list-group-item list-group-item-info">
@@ -41,17 +41,18 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">
-                                                Edit
-                                                <input type="textbox" value="{{modalv.header}}">
+                                            <h4 class="modal-title form-inline">
+                                                Edit Note Box
+                                                <input type="textbox" value="{{modalv.header}}" class="form-control" #headerV> under {{modalv.parentCol}}
                                             </h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p>This is a large modal.</p>
+                                            <p>Make changes and press Accept</p>
+                                            <textarea rows="{{modalv.list.length+1}}" #pointsV>{{modalv.points}}</textarea>
                                         </div>
                                         <div class="modal-footer">
                                             <div class=" btn-group">
-                                                <button type="button" class="btn btn-success" data-dismiss="modal">Accept</button>
+                                                <button type="button" class="btn btn-success" (click)="acceptChanges(headerV.value, pointsV.value)" data-dismiss="modal">Accept</button>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                             </div>
                                         </div>
