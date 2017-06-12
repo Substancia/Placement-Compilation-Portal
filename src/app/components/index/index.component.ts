@@ -16,16 +16,47 @@ export class IndexComponent {
   tips: string[];
 
   constructor(private dataService: DataService) {
-      this.tips = [
-        "Double Click on a company name to edit.",
-        "Click x to delete any item.",
-        "Type an item in an empty text box and either press enter, or click the (+) button",
-        "You cannot add an empty string, or one made only of blank spaces."
-      ]
+    this.tips = [
+      "Double Click on a company name to edit.",
+      "Click x to delete any item.",
+      "Type an item in an empty text box and either press enter, or click the (+) button",
+      "You cannot add an empty string, or one made only of blank spaces."
+    ]
     this.dataService.getData().subscribe(data => {
       console.log(data);
       this.data = data;
     })
+  }
+
+  addCompany(companyName: string) {
+    if ((/\S/.test(companyName))) {
+      var newCompany: Data =
+        {
+          Col0: {
+            Name: companyName,
+            Tags: ""
+          },
+          Cols: [
+            {
+              ColHeader: this.data[0].Cols[0].ColHeader,
+              Items: []
+            },
+            {
+              ColHeader: this.data[0].Cols[1].ColHeader,
+              Items: []
+            },
+            {
+              ColHeader: this.data[0].Cols[2].ColHeader,
+              Items: []
+            },
+            {
+              ColHeader: this.data[0].Cols[3].ColHeader,
+              Items: []
+            }
+          ]
+        }
+      this.data.push(newCompany);
+    }
   }
 }
 interface Data {

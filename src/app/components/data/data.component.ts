@@ -79,15 +79,19 @@ export class DataComponent {
       header: this.company.Cols[col_i].Items[item_k].Header,
       list: this.company.Cols[col_i].Items[item_k].List,
       parentCol: this.company.Cols[col_i].ColHeader,
-      points: this.company.Cols[col_i].Items[item_k].List.toString().replace(/,/g , "\n")//.trim()
+      points: this.company.Cols[col_i].Items[item_k].List.toString().replace(/,/g, "\n")//.trim()
     }
     console.log(this.modalv.points);
   }
 
-  acceptChanges(headerV: string, pointsV: string)
-  {
-    this.company.Cols[this.modalv.curr.col].Items[this.modalv.curr.box].Header=headerV;
-    this.company.Cols[this.modalv.curr.col].Items[this.modalv.curr.box].List=pointsV.split("\n");
+  acceptChanges(headerV: string, pointsV: string) {
+    this.company.Cols[this.modalv.curr.col].Items[this.modalv.curr.box].Header = headerV;
+    this.company.Cols[this.modalv.curr.col].Items[this.modalv.curr.box].List = pointsV.split("\n");
+  }
+
+  delCompany(n: number) {
+    // delete this.company;
+    
   }
 }
 
@@ -96,7 +100,7 @@ interface modalv {
   list: string[];
   parentCol: string;
   points: string;
-  curr: 
+  curr:
   {
     col: number;
     box: number

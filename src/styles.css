@@ -4,7 +4,8 @@ body {
 }
 
 a,
-span.glyphicon-pencil {
+span.glyphicon-pencil,
+.input-group-addon {
     cursor: pointer;
 }
 
@@ -40,6 +41,10 @@ textarea {
 
 .collapser.collapsed:after {
     content: "\e080";
+}
+
+data {
+    margin: 10%;
 }
 
 
